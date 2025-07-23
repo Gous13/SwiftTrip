@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h3 class="text-success text-center">Booking Successful!</h3>
+    <p class="text-center">Your Booking Code: <strong>{{ booking.booking_code }}</strong></p>
+
+    <h5 class="mt-3">Route Information</h5>
+    <ul>
+        <li><strong>Mode:</strong> {{ booking.mode|capitalize }}</li>
+        <li><strong>Route:</strong> {{ booking.source }} → {{ booking.destination }}</li>
+        <li><strong>Date & Time:</strong> {{ booking.date }} | {{ booking.time }}</li>
+    </ul>
+
+    <h5>Passenger List</h5>
+    <ul>
+        {% for p in passengers %}
+        <li>{{ p.name }} ({{ p.age }} yrs, {{ p.gender }})</li>
+        {% endfor %}
+    </ul>
+
+    <h5>Total Fare: ₹{{ booking.total_price }}</h5>
+    <a href="/download/{{ booking.booking_code }}" class="btn btn-primary mt-3">Download Ticket (PDF)</a>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Booking History</h2>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+            <tr>
+                <th>Booking Code</th>
+                <th>Name</th>
+                <th>Mode</th>
+                <th>Route</th>
+                <th>Date</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in bookings %}
+            <tr>
+                <td>{{ b.booking_code }}</td>
+                <td>{{ b.contact_name }}</td>
+                <td>{{ b.mode|capitalize }}</td>
+                <td>{{ b.source }} → {{ b.destination }}</td>
+                <td>{{ b.date }}</td>
+                <td>₹{{ b.total_price }}</td>
+                <td><a href="/download/{{ b.booking_code }}" class="btn btn-sm btn-outline-primary">Download PDF</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

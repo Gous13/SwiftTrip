@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Available Routes</h2>
+
+<!-- Bus Routes -->
+<h4 class="mt-4 text-primary">🚌 Bus Routes</h4>
+<div class="row">
+    {% for route in bus_routes %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ route.source }} → {{ route.destination }}</h5>
+                <p class="card-text">
+                    <strong>Date:</strong> {{ route.date }} <br>
+                    <strong>Time:</strong> {{ route.time }} <br>
+                    <strong>Price:</strong> ₹{{ route.price }} <br>
+                    <strong>Seats:</strong> {{ route.available_seats }}
+                </p>
+                <a href="/book/{{ route.id }}" class="btn btn-primary w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Train Routes -->
+<h4 class="mt-4 text-success">🚆 Train Routes</h4>
+<div class="row">
+    {% for route in train_routes %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ route.source }} → {{ route.destination }}</h5>
+                <p class="card-text">
+                    <strong>Date:</strong> {{ route.date }} <br>
+                    <strong>Time:</strong> {{ route.time }} <br>
+                    <strong>Price:</strong> ₹{{ route.price }} <br>
+                    <strong>Seats:</strong> {{ route.available_seats }}
+                </p>
+                <a href="/book/{{ route.id }}" class="btn btn-success w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Flight Routes -->
+<h4 class="mt-4 text-danger">✈️ Flight Routes</h4>
+<div class="row">
+    {% for route in flight_routes %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ route.source }} → {{ route.destination }}</h5>
+                <p class="card-text">
+                    <strong>Date:</strong> {{ route.date }} <br>
+                    <strong>Time:</strong> {{ route.time }} <br>
+                    <strong>Price:</strong> ₹{{ route.price }} <br>
+                    <strong>Seats:</strong> {{ route.available_seats }}
+                </p>
+                <a href="/book/{{ route.id }}" class="btn btn-danger w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+/* ---------- General Body ---------- */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Card Styling ---------- */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card img {
+    max-height: 200px;       /* Increased image size */
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    font-size: 14px;
+}
+
+/* ---------- Table ---------- */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    font-weight: bold;
+}

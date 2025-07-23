@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center" 
+     style="background: linear-gradient(135deg, #007bff, #00c6ff); color: white;">
+  <h1 class="display-5 fw-bold">SwiftTrip</h1>
+  <p class="lead">Book Bus, Train, and Flight Tickets in One Place!</p>
+  <a href="/routes" class="btn btn-light btn-lg fw-bold mt-3">Explore Routes</a>
+</div>
+
+<!-- Featured Transport Cards -->
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+
+  <!-- Bus Card -->
+  <div class="col">
+    <div class="card h-100 shadow border-0">
+      <img src="{{ url_for('static', filename='images/icons/bus.jpeg') }}" 
+           class="card-img-top" alt="Bus" 
+           style="height: 220px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title fw-bold text-primary">Bus Tickets</h5>
+        <p class="card-text">Book multiple passenger tickets with instant confirmation.</p>
+        <a href="/routes#bus" class="btn btn-primary mt-2 w-100">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Train Card -->
+  <div class="col">
+    <div class="card h-100 shadow border-0">
+      <img src="{{ url_for('static', filename='images/icons/train.jpeg') }}" 
+           class="card-img-top" alt="Train" 
+           style="height: 220px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title fw-bold text-success">Train Tickets</h5>
+        <p class="card-text">Find the best routes for your travel needs quickly.</p>
+        <a href="/routes#train" class="btn btn-success mt-2 w-100">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flight Card -->
+  <div class="col">
+    <div class="card h-100 shadow border-0">
+      <img src="{{ url_for('static', filename='images/icons/flight.jpeg') }}" 
+           class="card-img-top" alt="Flight" 
+           style="height: 220px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title fw-bold text-danger">Flight Tickets</h5>
+        <p class="card-text">Fly anywhere with our seamless booking experience.</p>
+        <a href="/routes#flight" class="btn btn-danger mt-2 w-100">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
